@@ -3,15 +3,15 @@ Collection of Maya Python scripts.
 
 <b>Export Master (exportmastergui.py)</b>
 
-streamlines OBJ, FBX, multi export process for objects in 3D environment.  
+Streamlines OBJ, FBX, multi export process for objects in 3D environment.  
 
 <b>Zero Anim Controls (zeroanimcontrolsgui.py)</b>
 
-zero out FK/IK anim controls by prefix or selection.  Supports user defined controls with unique names.
+Zero out FK/IK anim controls by prefix or selection.  Supports user defined controls with unique names.
 
 <b>Rename Master (renamemastergui.py)</b>
 
-simple renaming tool to replace Maya's terrible one.  Find and replace functionality, add prefix/suffix for multiple selections.
+Simple renaming tool.  Find and replace functionality, add prefix/suffix for multiple selections.
 
 To load GUI's: import then modulename.showUI().
 
