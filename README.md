@@ -4,7 +4,7 @@ Collection of Maya Python scripts.
 <b>Model Library (modellibgui.py)</b>
 
 The script allows users to create a library of their favorite models.  Access your collection by launching the Model Library.  
-Save, load, delete functionality.  See detailed instructions in doc string. 
+Save, load, delete functionality.  See detailed instructions in docstring. 
 
 <b>Export Master (exportmastergui.py)</b>
 
@@ -18,8 +18,9 @@ Zero out FK/IK anim controls by prefix or selection.  Supports user defined cont
 
 Simple renaming tool.  Find and replace functionality, add prefix/suffix for multiple selections.
 
-To load GUI's: import then modulename.showUI().
-Only Maya 2011 - 2016 supported (Pyside).  Future iterations will support Pyside and Pyside2.   
+* To load GUI's: import then modulename.showUI()
+* More information on how to use, gotchas, and coming soon in docstring 
+* Only Maya 2011 - 2016 supported (Pyside).  Future iterations will support Pyside and Pyside2.   
 
 # Author Information
 Name: Juan Mendiola
