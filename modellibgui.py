@@ -121,10 +121,9 @@ class ModelLibUI(QtGui.QDialog):
             # TODO: should we also delete the model from the directory?
             # delete model from library
             self.model_lib.delete_model(model)
+            self.refresh_btn_cmd()
         else:
             pmc.displayWarning('Please select a model to remove.')
-
-        self.refresh_btn_cmd()
 
     def close_btn_cmd(self):
         pmc.deleteUI(self.objectName(), window=True)
@@ -132,15 +131,14 @@ class ModelLibUI(QtGui.QDialog):
     def save_btn_cmd(self):
         model_name = self.save_line.text()
         if model_name:
-            print 'MODEL NAME', model_name
+            print 'Saving', model_name
             model = Model(name=model_name)
             self.model_lib.save_model(model=model)
             self.save_line.setText('')
+            # refresh the model list since it has been updated...
+            self.refresh_btn_cmd()
         else:
             pmc.displayWarning('Please enter model name to save.')
-
-        # refresh the model list since it has been updated...
-        self.refresh_btn_cmd()
 
     def load_model_lib(self):
         # clear list before loading...
@@ -235,7 +233,7 @@ class ModelLib(object):
 
         # print new list
         for i in self.model_list:
-            print i.name
+            print 'Updated model list:', i.name
 
         # update the json
         with open(JSON_PATH, 'w') as f:
