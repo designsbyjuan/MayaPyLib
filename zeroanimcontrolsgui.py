@@ -1,7 +1,7 @@
 """
-This script will zero out all the animation controls in a rig.  Includes FK/IK, user defined controls with unique names.
-Values of 0 and 1 are considered default.  Scale attributes are set back to 1.  Reset controls by finding prefixes or
-reset by the manual selection of specific anim controls within rig.
+This script will zero out all the animation controls in a rig.  Includes FK/IK abd user defined controls with unique
+names.  Values of 0 and 1 are considered default and ignored.  Scale attributes are set back to 1.  Reset controls by
+inputting prefix(es) or reset by the manual selection of controls within rig.
 """
 
 import maya.OpenMayaUI as omui
@@ -44,7 +44,8 @@ class ZeroAnimControlsUI(QtGui.QDialog):
         self.prefix_line_edit = QtGui.QLineEdit()
         self.prefix_line_edit.setPlaceholderText('ctrl*, ctrlIK*, ctrlFK* , ctrlGim*, *anim')
         self.prefix_line_edit.setEnabled(False)
-        self.select_prefix_btn = QtGui.QPushButton('Select')
+        #@jmendiola
+        # self.select_prefix_btn = QtGui.QPushButton('Select')
 
         # reset widgets
         self.reset_btn = QtGui.QPushButton('Reset Anim Controls')
@@ -66,7 +67,8 @@ class ZeroAnimControlsUI(QtGui.QDialog):
         prefix_layout.setContentsMargins(*self.default_margins)
         prefix_layout.addWidget(self.prefix_lbl)
         prefix_layout.addWidget(self.prefix_line_edit)
-        prefix_layout.addWidget(self.select_prefix_btn)
+        #@jmendiola
+        # prefix_layout.addWidget(self.select_prefix_btn)
 
         # button layout
         button_layout = QtGui.QHBoxLayout()
