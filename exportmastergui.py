@@ -1,8 +1,9 @@
 """
-This script positions user selected objects in scene at (0,0) cords and exports them as OBJ or FBX.  User has the option
-to set objects pivot to base during operation as well as delete selected objects on export.  By default, "exportLib"
-folder is created in users main maya directory to which exports are sent.  User also has option to select specific path
-to export to.  Rigged objects/characters not supported.  Must be all one mesh on export and all attributes unlocked.
+This script exports individual or a multi selection of objects in a scene.  Each selected object is exported as an
+individual file.  The name of the file is derived from it's name in the scene.  On selection, selected objects are
+positioned at 0,0 cords.  User has the option to export as OBJ or FBX.  More export options will be available in the
+future as well as the option to for go zeroing out the object.  By default an exportLib folder is created in the users
+main maya directory.  The user also has the option to select a specific folder to export to.
 """
 
 import maya.OpenMayaUI as omui
@@ -200,7 +201,6 @@ class ExportMaster(object):
                     cmds.file(path, f=True, pr=1, typ="FBX export", es=1, op="fbx")
                 elif export_type == export_options[1]:
                     cmds.file(path, f=True, pr=1, typ="OBJexport", es=1, op="groups=1; ptgroups=1; materials=1; smoothing=1; normals=1")
-
                 # clean up and delete object
                 if delete_on_export:
                     cmds.delete(sel)
